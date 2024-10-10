@@ -1,5 +1,11 @@
 # IHMC EtherCAT Master
 
+[ ![ihmc-ethercat-master](https://maven-badges.herokuapp.com/maven-central/us.ihmc/ihmc-ethercat-master/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/us.ihmc/ihmcethercat-master)
+![buildstatus](https://github.com/ihmcrobotics/ihmc-ethercat-master/actions/workflows/gradle-test.yml/badge.svg?branch=develop)
+![buildstatus](https://github.com/ihmcrobotics/ihmc-ethercat-master/actions/workflows/gradle-test.yml/badge.svg?branch=main)
+![buildstatus](https://github.com/ihmcrobotics/ihmc-ethercat-master/actions/workflows/gradle-test.yml/badge.svg?branch=0.15.0)
+
+
 This package provides a lightweight java wrapper around SOEM (https://github.com/OpenEtherCATsociety/SOEM) and provides an Object Orientated interface to the EtherCAT master.
 
 Extra functionality built on top of SOEM includes 
