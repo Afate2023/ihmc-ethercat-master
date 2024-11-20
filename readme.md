@@ -17,14 +17,10 @@ Extra functionality built on top of SOEM includes
 
 ## Usage
 
-### Supported operating systems
+## Supported platforms:
+- Linux (Ubuntu 20.04+ or similar x86_64, arm64)
 
-The IHMC EtherCAT master has a native component that is currently compiled for Linux only.
-
-- Tested on Ubuntu 16.04, 18.04 and Ubuntu 18.04
-- Requires OpenJDK JRE 8 or higher (Compatible JRE's should work).
-- Native library is compiled statically on Ubuntu 16.04, should work on most distributions
-
+Requires Java 17.
 
 ### Gradle
 
