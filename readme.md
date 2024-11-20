@@ -131,14 +131,17 @@ The gradle build files for the SOEM wrapper and native libraries are created by 
 
 To build and publish run the following commands. Note that the gradle commands are ran from within the build directory.
 
-
-- cd ihmc-ethercat-master
-- mkdir build
-- cd build
-- cmake -DCMAKE_BUILD_TYPE=Release ..
-- make
-- ../gradlew publishToMavenLocal -Ptarget=JAVA
-- ../gradlew publishToMavenLocal -Ptarget=PLATFORM
+```
+cd ihmc-ethercat-master
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+# Cross compile for arm64 using the toolchain
+# cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../linux-aarch64-toolchain.cmake ..
+make
+../gradlew publishToMavenLocal -Ptarget=JAVA
+../gradlew publishToMavenLocal -Ptarget=PLATFORM
+```
 
 Note that if you want to publish multiple platform libraries you only have to run target=JAVA on a single platform
 
@@ -149,16 +152,6 @@ Note that if you want to publish multiple platform libraries you only have to ru
 
 ### Compiling with Docker
 
-Run `./buildWithDocker.sh`
+Build the docker images first with: `./buildDockerImages.sh`
 
-The Docker image is hosted at [https://hub.docker.com/r/ihmcrobotics/ethercat-master]().
-
-If changes to the Dockerfile are needed, build it with the following command, incrementing the version.
-Then, increment the version in the buildWithDocker.sh file before running.
-
-```
-# docker build --tag ihmcrobotics/ethercat-master:0.X .
-# docker rm ethercat-master
-```
-
-For more about IHMC Robotics's usage of Docker, see [https://github.com/ihmcrobotics/ihmc-open-robotics-software/tree/develop/docker]().
+Then run: `./buildWithDocker.sh` to build the artifacts, they will be copied to the host's local maven repository.
