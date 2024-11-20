@@ -30,12 +30,8 @@ The IHMC EtherCAT master has a native component that is currently compiled for L
 
 Add the IHMC EtherCAT Master as dependency
 ```
-repositories {
-	mavenCentral()
-}
-	
 dependencies {
-	implementation group: 'us.ihmc', name: 'ihmc-ethercat-master', version: '0.14.0'
+	implementation group: 'us.ihmc', name: 'ihmc-ethercat-master', version: '0.15.0'
 }
 ```
 
